@@ -1,0 +1,87 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 50px;
+
+    background-color: rgb(210, 210, 11);
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: white;
+}
+
+
+.logo img {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+}
+
+
+.logo h2 {
+    font-size: 20px;
+}
+
+
+/* Menu */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.menu a {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.menu a:hover {
+
+    color: #FFC107;
+
+}
+
+
+/* Bouton inscription */
+
+.btn-inscription {
+
+    background-color: #FFC107;
+
+    color: black !important;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+}
+
+
+.btn-inscription:hover {
+
+    background-color: white;
+
+}
