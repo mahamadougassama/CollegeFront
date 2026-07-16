@@ -59,12 +59,14 @@
                 <div class="input-group">
 
                     <label>
-                        Email
+                        nom
                     </label>
 
                     <input 
-                    type="email"
-                    placeholder="Entrer votre email">
+                    type="text" name="nom"
+                    placeholder="Entrer votre nom"
+                    [(ngModel)]="admin.nom"
+                    >
 
                 </div>
 
@@ -74,19 +76,21 @@
                 <div class="input-group">
 
                     <label>
-                        Mot de passe
+                        motDePasse
                     </label>
 
                     <input 
-                    type="password"
-                    placeholder="Entrer votre mot de passe">
+                    type="password" name="motDePasse"
+                    placeholder="Entrer votre mot de passe"
+                    [(ngModel)]="admin.motDePasse"
+                    >
 
                 </div>
 
 
 
 
-              <a routerLink="/admin/dashbord">Connecter</a>
+              <a (click)="connexion()">Connecter</a>
 
 
 

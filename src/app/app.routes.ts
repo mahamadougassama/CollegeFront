@@ -8,6 +8,8 @@ import { Ressource } from './Les Headers/ressource/ressource';
 import { Login } from './Administrateur/login/login';
 import { Dashbord } from './Administrateur/dashbord/dashbord';
 import { Inscription } from './Les Headers/inscription/inscription';
+import { Bienvenue } from './Administrateur/bienvenue/bienvenue';
+import { GestionActualite } from './Administrateur/gestion-actualite/gestion-actualite';
 
 export const routes: Routes = [
    {
@@ -49,7 +51,17 @@ export const routes: Routes = [
             },
             {
                 path:'dashbord',
-                component:Dashbord
+                component:Dashbord,
+                children:[
+                  {
+                    path:'',
+                    component:Bienvenue
+                  },
+                  {
+                    path:'actualite',
+                    component:GestionActualite
+                  }
+                ]
             }
         ]
       }

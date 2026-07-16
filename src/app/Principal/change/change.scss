@@ -142,6 +142,117 @@
     transform: translateY(-5px);
 
 }
+/* Responsive Hero */
+
+@media(max-width:992px){
+
+    .hero{
+
+        height:75vh;
+
+    }
+
+
+    .hero h1{
+
+        font-size:45px;
+
+    }
+
+
+    .hero p{
+
+        font-size:20px;
+
+        padding:0 20px;
+
+    }
+
+
+    .hero-buttons a{
+
+        padding:13px 30px;
+
+        font-size:16px;
+
+    }
+
+}
+
+
+
+
+@media(max-width:768px){
+
+
+    .hero{
+
+        height:auto;
+
+        min-height:80vh;
+
+        padding:40px 20px;
+
+    }
+
+
+
+    .hero-content{
+
+        width:100%;
+
+    }
+
+
+
+    .hero h1{
+
+        font-size:32px;
+
+        margin-bottom:15px;
+
+    }
+
+
+
+    .hero p{
+
+        font-size:16px;
+
+        line-height:1.5;
+
+        margin-bottom:25px;
+
+    }
+
+
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        width:100%;
+
+    }
+
+
+
+    .hero-buttons a{
+
+        width:80%;
+
+        text-align:center;
+
+        padding:12px 20px;
+
+        font-size:16px;
+
+    }
+
+
+}
 .directeur {
 
     display: flex;
@@ -208,6 +319,83 @@
     color: #FFC107;
 
 }
+/* Responsive Mot du Directeur */
+
+@media(max-width:992px){
+
+    .directeur{
+
+        gap:30px;
+
+        padding:50px 5%;
+
+    }
+
+
+    .directeur-image img{
+
+        width:250px;
+
+        height:300px;
+
+    }
+
+
+    .directeur-message h2{
+
+        font-size:30px;
+
+    }
+
+
+}
+
+
+
+@media(max-width:768px){
+
+    .directeur{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:40px 20px;
+
+    }
+
+
+    .directeur-image img{
+
+        width:80%;
+
+        height:auto;
+
+    }
+
+
+    .directeur-message{
+
+        max-width:100%;
+
+    }
+
+
+    .directeur-message h2{
+
+        font-size:26px;
+
+    }
+
+
+    .directeur-message p{
+
+        font-size:16px;
+
+    }
+
+}
+
 /*mission*/
 .mission{
 
@@ -1065,6 +1253,64 @@
     color:green;
 
 }
+/* Responsive Atouts */
+
+@media(max-width:992px){
+
+    .atouts-container{
+
+        flex-wrap:wrap;
+
+        gap:25px;
+
+    }
+
+
+    .atout-card{
+
+        width:250px;
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .atouts-container{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:20px;
+
+    }
+
+
+
+    .atout-card{
+
+        width:90%;
+
+        padding:25px;
+
+        text-align:center;
+
+    }
+
+
+
+    .atout-card span{
+
+        font-size:40px;
+
+    }
+
+
+}
 .cycles{
 
     padding:80px 8%;
@@ -1119,7 +1365,7 @@
 
     margin-bottom:40px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    box-shadow:15px 20px 10px green;
 
 }
 

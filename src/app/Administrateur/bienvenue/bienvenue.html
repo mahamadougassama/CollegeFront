@@ -1,0 +1,30 @@
+<section class="actualites">
+
+    <h1>
+        Dernières actualités
+    </h1>
+
+
+    <div class="actualite-container">
+
+
+        <div class="actualite-card" *ngFor="let actualite of bienvenueActualite"
+             >
+              <h2>
+                {{actualite.titre}}
+            </h2>
+
+            <img [src]="'http://localhost:8080/'+actualite.image" alt="actualite Image">
+
+            <p>nom:{{actualite.image}}</p>
+            <p>
+                {{actualite.contenue}}
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</section>
