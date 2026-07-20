@@ -39,6 +39,12 @@ publier(){
   this.actualiteServive.save(formData).subscribe({
     next:(reponse)=>{
       console.log(reponse)
+      this.actualite={
+        id:0,
+        titre:'',
+        contenue:'',
+        image:'',
+      }
     },
     error:(err)=>{
       console.log(err);

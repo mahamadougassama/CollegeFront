@@ -16,4 +16,8 @@ export class ActualiteService {
   findAll():Observable<Actuality[]>{
     return this.http.get<Actuality[]>(this.url+'/findAll')
   }
+
+  supprimer(id:number){
+    return this.http.delete(this.url+'/delete?id='+id);
+  }
 }

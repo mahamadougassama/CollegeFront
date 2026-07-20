@@ -117,6 +117,7 @@
     background-color: white;
 
     transform: translateY(-5px);
+    
 
 }
 
@@ -129,6 +130,7 @@
     color: white;
 
     background: transparent;
+    cursor: pointer;
 
 }
 
@@ -395,7 +397,591 @@
     }
 
 }
+.actualite {
+  padding: 80px 8%;
+  background: #f8fafc;
+}
 
+/* En-tête */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-header span {
+  color: #d4a017;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.section-header h1 {
+  margin: 10px 0;
+  color: #123b2a;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Carte */
+
+.actualite-card {
+  max-width: 1100px;
+  min-height: 400px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+  transition: 0.3s ease;
+}
+
+.actualite-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Image */
+
+.actualite-image {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.actualite-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.actualite-card:hover .actualite-image img {
+  transform: scale(1.08);
+}
+
+/* Badge */
+
+.badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  background: #d4a017;
+  color: white;
+
+  padding: 8px 16px;
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Contenu */
+
+.actualite-content {
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.date {
+  color: #d4a017;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.actualite-content h2 {
+  color: #123b2a;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.actualite-content p {
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bouton */
+
+.actualite-content button {
+  width: fit-content;
+
+  margin-top: 25px;
+
+  padding: 13px 24px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #123b2a;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.actualite-content button:hover {
+  background: #d4a017;
+  transform: translateX(5px);
+}
+
+.actualite-content button span {
+  margin-left: 8px;
+  font-size: 20px;
+}
+/* =========================
+   SECTION PRINCIPALE
+========================= */
+
+.actualite {
+  width: 100%;
+  padding: 70px 5%;
+  box-sizing: border-box;
+  background: #f8fafc;
+}
+
+
+/* =========================
+   EN-TÊTE
+========================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+
+  span {
+    color: #d4a017;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    margin: 12px 0;
+
+    color: #12372a;
+
+    font-size: clamp(28px, 5vw, 44px);
+
+    font-weight: 800;
+  }
+
+  p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: clamp(14px, 2vw, 17px);
+  }
+}
+
+
+/* =========================
+   CARTE
+========================= */
+
+.actualite-card {
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  background: white;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+
+  transition: transform 0.4s ease,
+              box-shadow 0.4s ease;
+
+}
+
+
+.actualite-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.actualite-image {
+
+  width: 45%;
+
+  min-height: 400px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+}
+
+
+.actualite-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  animation: mouvementImage 12s ease-in-out infinite alternate;
+
+}
+
+
+/* Mouvement léger de l'image */
+
+@keyframes mouvementImage {
+
+  0% {
+
+    transform: scale(1);
+
+  }
+
+  100% {
+
+    transform: scale(1.08);
+
+  }
+
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.badge {
+
+  position: absolute;
+
+  top: 20px;
+
+  left: 20px;
+
+  padding: 9px 16px;
+
+  background: #d4a017;
+
+  color: white;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+}
+
+
+/* =========================
+   CONTENU
+========================= */
+
+.actualite-content {
+
+  flex: 1;
+
+  padding: clamp(25px, 5vw, 60px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+
+.date {
+
+  color: #15803d;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  margin-bottom: 15px;
+
+}
+
+
+.actualite-content h2 {
+
+  margin: 0 0 20px;
+
+  color: #12372a;
+
+  font-size: clamp(24px, 4vw, 38px);
+
+  line-height: 1.25;
+
+}
+
+
+.actualite-content p {
+
+  margin: 0 0 30px;
+
+  color: #475569;
+
+  font-size: clamp(15px, 2vw, 18px);
+
+  line-height: 1.8;
+
+  overflow-wrap: break-word;
+
+}
+
+
+/* =========================
+   BOUTON
+========================= */
+
+.actualite-content button {
+
+  align-self: flex-start;
+
+  padding: 13px 22px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #12372a;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+}
+
+
+.actualite-content button:hover {
+
+  background: #d4a017;
+
+}
+
+
+.actualite-content button span {
+
+  margin-left: 8px;
+
+  font-size: 20px;
+
+}
+.actualite{
+    background-color: ivory;
+}
+
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 900px) {
+
+  .actualite {
+   
+    padding: 50px 4%;
+
+  }
+
+
+  .actualite-card {
+
+    flex-direction: column;
+
+  }
+
+
+  .actualite-image {
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+
+  }
+
+
+  .actualite-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+  }
+
+
+  .actualite-content {
+
+    padding: 35px;
+
+  }
+
+}
+
+
+/* =========================
+   TÉLÉPHONE
+========================= */
+
+@media (max-width: 600px) {
+
+  .actualite {
+
+    padding: 40px 15px;
+
+  }
+
+
+  .section-header {
+
+    margin-bottom: 30px;
+
+  }
+
+
+  .actualite-card {
+
+    border-radius: 15px;
+
+  }
+
+
+  .actualite-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+}
+
+.actualite-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  /* L'image remplit toujours son conteneur */
+  object-fit: cover;
+
+  /* Animation douce */
+  animation: mouvementImage 12s ease-in-out infinite alternate;
+}
+
+/* Animation de zoom et déplacement */
+@keyframes mouvementImage {
+
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1.06) translate(-8px, -4px);
+  }
+
+  100% {
+    transform: scale(1.12) translate(8px, 4px);
+  }
+}
+
+
+  .actualite-content {
+
+    padding: 25px 20px;
+
+  }
+
+
+  .actualite-content h2 {
+
+    font-size: 25px;
+
+  }
+
+
+  .actualite-content p {
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+  }
+
+
+  .actualite-content button {
+
+    width: 100%;
+
+    text-align: center;
+
+  }
+
+}
 /*mission*/
 .mission{
 

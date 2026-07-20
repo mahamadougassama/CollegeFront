@@ -134,16 +134,16 @@
         </h2>
 
 
-        <input type="text" placeholder="Votre nom">
+        <input type="text" placeholder="Votre nom" name="nom" [(ngModel)]="contact.nom">
 
 
-        <input type="email" placeholder="Votre email">
+        <input type="email" placeholder="Votre email" name="email" [(ngModel)]="contact.email">
 
 
-        <textarea placeholder="Votre message"></textarea>
+        <textarea placeholder="Votre message" name="message" [(ngModel)]="contact.message"></textarea>
 
 
-        <button>
+        <button (click)="envoyer()">
             Envoyer
         </button>
 

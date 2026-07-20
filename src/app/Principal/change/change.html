@@ -18,7 +18,7 @@
                 S'inscrire maintenant
             </a>
 
-            <a routerLink="/actualite" class="btn-secondary">
+            <a routerLink="/ressource" class="btn-secondary">
                 Découvrir nos actualités
             </a>
 
@@ -30,7 +30,7 @@
 <section class="directeur">
 
     <div class="directeur-image">
-        <img src="Images/directeur.jpg" alt="Directeur">
+        <img src="Images/DG.jpeg" alt="Directeur">
     </div>
 
 
@@ -61,6 +61,58 @@
         </h4>
 
     </div>
+
+</section>
+<section class="actualite">
+
+  <div class="section-header">
+    <span>À LA UNE</span>
+    <h1>Dernière actualité</h1>
+    <p>Découvrez les dernières nouvelles du Collège Royal</p>
+  </div>
+
+  <div
+    class="actualite-card"
+    *ngIf="derniereActualite"
+  >
+
+    <!-- Image -->
+    <div class="actualite-image">
+
+      <img
+        [src]="'http://localhost:8080/images/' + derniereActualite.image"
+        alt="Image de l'actualité"
+      >
+
+      <div class="badge">
+        Actualité
+      </div>
+
+    </div>
+
+    <!-- Contenu -->
+    <div class="actualite-content">
+
+      <span class="date">
+        Dernière publication
+      </span>
+
+      <h2>
+        {{ derniereActualite.titre }}
+      </h2>
+
+      <p>
+        {{ derniereActualite.contenue }}
+      </p>
+
+      <button routerLink="/ressource">
+        Lire la suite
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </div>
 
 </section>
 <section class="mission">

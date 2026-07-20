@@ -1,382 +1,247 @@
-.emplois{
-
-padding:70px 8%;
-
-background:#f8f9fa;
-
+.actualites-section {
+width: 100%;
+padding: 60px 5%;
+background:ivory;
+box-sizing: border-box;
 }
 
+/* =========================
+TITRE
+========================= */
 
+.section-header {
+text-align: center;
+margin-bottom: 45px;
 
-.titre{
-
-text-align:center;
-
-margin-bottom:50px;
-
+span {
+color: #d4a017;
+font-size: 14px;
+font-weight: 700;
+letter-spacing: 2px;
 }
 
-
-.titre h2{
-
-font-size:40px;
-
-color:#0D47A1;
-
+h2 {
+margin: 10px 0;
+color: #12372a;
+font-size: clamp(28px, 4vw, 42px);
+font-weight: 800;
 }
 
-
-
-.titre p{
-
-color:#666;
-
-font-size:18px;
-
+p {
+color: #64748b;
+font-size: 16px;
+}
 }
 
+/* =========================
+LISTE
+========================= */
 
+.actualites-list {
+width: 100%;
+max-width: 1200px;
+margin: auto;
 
-
-.cycle{
-
-margin-bottom:60px;
-
+display: flex;
+flex-direction: column;
+gap: 30px;
 }
 
+/* =========================
+UNE CARTE = UNE LIGNE
+========================= */
 
+.actualite-card {
+width: 100%;
+min-height: 280px;
 
-.cycle h3{
+display: flex;
 
-font-size:30px;
+background: white;
+border-radius: 18px;
+overflow: hidden;
 
-color:#2E7D32;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
-border-left:6px solid #2E7D32;
+transition: 0.4s ease;
 
-padding-left:15px;
-
-margin-bottom:30px;
-
+&:hover {
+transform: translateY(-6px);
+box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
 }
 
+/* =========================
+IMAGE À GAUCHE
+========================= */
 
+.card-image-wrapper {
+width: 38%;
+min-height: 280px;
 
-
-
-.classes{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:25px;
-
+position: relative;
+overflow: hidden;
+flex-shrink: 0;
 }
 
+.card-image-wrapper img {
+width: 100%;
+height: 100%;
 
+object-fit: cover;
 
+/* Animation automatique */
+animation: mouvementImage 8s ease-in-out infinite alternate;
 
-
-.classe-card{
-
-background:white;
-
-padding:25px;
-
-border-radius:18px;
-
-text-align:center;
-
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-
-transition:.3s;
-
+transition: transform 0.7s ease;
 }
 
+/* =========================
+MOUVEMENT AUTOMATIQUE
+========================= */
 
+@keyframes mouvementImage {
 
-.classe-card:hover{
-
-transform:translateY(-8px);
-
+0% {
+transform: scale(1) translateX(0);
 }
 
-
-
-
-.classe-card h4{
-
-color:#0D47A1;
-
-font-size:22px;
-
+50% {
+transform: scale(1.08) translateX(-8px);
 }
 
-
-
-.classe-card button{
-
-margin-top:15px;
-
-padding:12px 25px;
-
-border:none;
-
-border-radius:30px;
-
-background:green;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-
-
-.classe-card button:hover{
-
-background:#FFC107;
-
-color:black;
-
-}
-
-
-
-@media(max-width:900px){
-
-.classes{
-
-grid-template-columns:1fr;
-
+100% {
+transform: scale(1.12) translateX(8px);
 }
 
 }
 
+/* Mouvement supplémentaire au survol */
 
+.actualite-card:hover .card-image-wrapper img {
+transform: scale(1.18);
+}
 
+/* =========================
+BADGE
+========================= */
 
-.resultats{
+.image-overlay {
+position: absolute;
 
+top: 18px;
+left: 18px;
 
-padding:80px 10%;
+padding: 8px 14px;
 
-background:white;
+background: #d4a017;
+color: white;
+
+border-radius: 20px;
+
+font-size: 11px;
+font-weight: 700;
+}
+
+/* =========================
+CONTENU À DROITE
+========================= */
+
+.card-content {
+flex: 1;
+
+padding: 35px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.category {
+color: #15803d;
+
+font-size: 13px;
+font-weight: 700;
+
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+
+.card-content h3 {
+margin: 0 0 15px;
+
+color: #12372a;
+
+font-size: 26px;
+line-height: 1.3;
+}
+
+.card-text {
+margin: 0;
+
+color: #475569;
+
+font-size: 16px;
+line-height: 1.8;
+
+overflow-wrap: break-word;
+}
+
+/* =========================
+RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+.actualites-section {
+padding: 40px 15px;
+}
+
+.actualite-card {
+flex-direction: column;
+}
+
+.card-image-wrapper {
+width: 100%;
+height: 260px;
+min-height: 260px;
+}
+
+.card-image-wrapper img {
+width: 100%;
+height: 100%;
+}
+
+.card-content {
+padding: 25px 20px;
+}
+
+.card-content h3 {
+font-size: 22px;
+}
+
+.card-text {
+font-size: 15px;
+line-height: 1.7;
+}
 
 }
 
+/* Très petits téléphones */
 
+@media (max-width: 480px) {
 
-
-.resultat-header{
-
-
-text-align:center;
-
-margin-bottom:40px;
-
-
+.card-image-wrapper {
+height: 230px;
+min-height: 230px;
 }
 
-
-
-.resultat-header h2{
-
-
-font-size:40px;
-
-color:#0D47A1;
-
-
+.card-content {
+padding: 20px 16px;
 }
 
-
-
-.resultat-header p{
-
-
-color:#666;
-
-font-size:18px;
-
-
+.section-header p {
+font-size: 14px;
 }
-
-
-
-
-
-.recherche-resultat{
-
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-margin-bottom:50px;
-
-
-}
-
-
-
-
-.recherche-resultat select{
-
-
-padding:15px 30px;
-
-border-radius:30px;
-
-border:1px solid #ddd;
-
-font-size:16px;
-
-
-}
-
-
-
-
-.recherche-resultat button{
-
-
-padding:15px 35px;
-
-border:none;
-
-border-radius:30px;
-
-background:#2E7D32;
-
-color:white;
-
-font-weight:bold;
-
-cursor:pointer;
-
-
-}
-
-
-
-
-.recherche-resultat button:hover{
-
-
-background:#FFC107;
-
-color:black;
-
-
-}
-
-
-
-
-
-.resultat-card{
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-background:#f8f9fa;
-
-padding:25px;
-
-border-radius:20px;
-
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-
-
-}
-
-
-
-.resultat-icon{
-
-
-font-size:45px;
-
-
-}
-
-
-
-
-.resultat-info h3{
-
-
-color:#0D47A1;
-
-
-}
-
-
-
-.resultat-info p{
-
-
-color:#666;
-
-
-}
-
-
-
-
-.resultat-info span{
-
-
-background:#2E7D32;
-
-color:white;
-
-padding:6px 15px;
-
-border-radius:20px;
-
-
-}
-
-
-
-
-
-.resultat-card button{
-
-
-background:#0D47A1;
-
-color:white;
-
-border:none;
-
-padding:12px 25px;
-
-border-radius:30px;
-
-cursor:pointer;
-
-
-}
-
-
-
-.resultat-card button:hover{
-
-
-background:#FFC107;
-
-color:black;
-
 
 }

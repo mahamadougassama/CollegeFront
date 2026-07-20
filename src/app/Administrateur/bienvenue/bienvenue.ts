@@ -14,9 +14,22 @@ export class Bienvenue {
   constructor(private actualiteService:ActualiteService){}
  bienvenueActualite:Actuality[]=[];
  ngOnInit(){
+ this.charger();
+ }
+ supprimer(id:number){
+  this.actualiteService.supprimer(id).subscribe({
+    next:(reponse)=>{
+      this.charger();
+    },
+    error:(err)=>{
+      console.log(err);
+    }
+  })
+ }
+ charger(){
   this.actualiteService.findAll().subscribe({
     next:(reponse)=>{
-      this.bienvenueActualite=reponse;
+      this.bienvenueActualite=reponse
     },
     error:(err)=>{
       console.log(err);
