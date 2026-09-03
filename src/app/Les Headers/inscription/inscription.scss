@@ -1,395 +1,231 @@
-.inscription{
-
-
-padding:80px 10%;
-
-background:ivory;
-
-
+/* --- Style Global de la Section Inscription --- */
+.inscription-section {
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 100px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
-
-.inscription-header{
-
-
-text-align:center;
-
-margin-bottom:60px;
-
-
+.inscription-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-
-
-.inscription-header h2{
-
-
-font-size:42px;
-
-color:#0D47A1;
-
-
+/* --- En-tête --- */
+.inscription-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px auto;
 }
 
-
-
-.inscription-header p{
-
-
-font-size:18px;
-
-color:#666;
-
-
+.inscription-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.1);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(217, 119, 6, 0.2);
 }
 
-
-
-
-
-.inscription-content{
-
-
-display:flex;
-
-align-items:center;
-
-gap:60px;
-
-
+.inscription-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
-
-
-
-
-/* Partie gauche */
-
-.inscription-description{
-
-
-flex:1;
-
-background:green;
-
-color:white;
-
-padding:45px;
-
-border-radius:25px;
-
-box-shadow:0 15px 30px rgba(0,0,0,.15);
-
-
+.inscription-lead {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
 }
 
-
-
-.inscription-description h3{
-
-
-font-size:30px;
-
-margin-bottom:20px;
-
-
+/* --- Grille 2 Colonnes --- */
+.inscription-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
 }
 
-
-
-.inscription-description p{
-
-
-line-height:1.8;
-
-font-size:17px;
-
-
+/* --- Côté Image (Hauteur fixe partagée) --- */
+.inscription-image-side {
+    position: relative;
 }
 
-
-
-.inscription-description button{
-
-
-margin-top:20px;
-
-padding:14px 30px;
-
-border:none;
-
-border-radius:30px;
-
-background:#FFC107;
-
-font-weight:bold;
-
-cursor:pointer;
-
-
+.inscription-img-frame {
+    position: relative;
+    width: 100%;
+    height: 440px; /* HAUTEUR FIXE EXACTE */
+    border-radius: 24px;
+    overflow: hidden;
+    background: beige;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-
-
-/* Partie documents */
-
-.documents-list{
-
-
-flex:1;
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-
+.inscription-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
-
-
-
-.document-item{
-
-
-display:flex;
-
-align-items:center;
-
-gap:20px;
-
-padding:20px;
-
-background:#f8f9fa;
-
-border-radius:18px;
-
-transition:.3s;
-
-
+/* Badge flottant sur l'image */
+.inscription-img-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 16px;
+    border-radius: 14px;
 }
 
-
-
-.document-item:hover{
-
-
-transform:translateX(10px);
-
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-
-
+.inscription-img-badge .number {
+    display: block;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #f59e0b;
 }
 
-
-
-
-.document-item span{
-
-
-font-size:40px;
-
-
+.inscription-img-badge .text {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-
-
-.document-item h4{
-
-
-color:#0D47A1;
-
-margin-bottom:5px;
-
-
+/* --- Côté Texte (Même hauteur fixe exacte de 440px) --- */
+.inscription-content-side {
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-.document-item p{
-
-
-margin:0;
-
-color:#555;
-
-
+.inscription-card {
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 30px; /* Padding ajusté pour un rendu compact et élégant */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    height: 440px; /* HAUTEUR FIXE EXACTE IDENTIQUE À L'IMAGE */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-
-
-
-
-@media(max-width:900px){
-
-
-.inscription-content{
-
-flex-direction:column;
-
+.card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
-
-}
-.series{
-
-    padding:80px 8%;
-
-    background:ivory;
-
+.inscription-card h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
-
-
-.series-header{
-
-    text-align:center;
-
-    margin-bottom:60px;
-
+.inscription-card p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
-
-.series-header h2{
-
-    font-size:42px;
-
-    color:#0D47A1;
-
+/* Liste des points forts */
+.inscription-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-
-
-.series-header p{
-
-    color:#666;
-
-    font-size:18px;
-
+.inscription-features li {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-
-
-
-
-.series-container{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-   
-
+.inscription-features span {
+    color: #f59e0b;
+    font-weight: bold;
 }
 
-
-
-
-
-.serie-card{
-
-    background:#f8f9fa;
-
-    padding:35px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.12);
-     box-shadow: 10px 10px 15px green;
-
-    transition:0.3s;
-
+/* Boutons d'action */
+.inscription-buttons {
+    display: flex;
+    gap: 12px;
 }
 
-
-
-.serie-card:hover{
-
-    transform:translateY(-12px);
-
+.btn-main {
+    background: #d97706;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
 }
 
-
-
-
-.serie-icon{
-
-    width:80px;
-
-    height:80px;
-
-    border-radius:50%;
-
-    background:rgb(150, 2, 2);
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:40px;
-
-    margin-bottom:20px;
-
+.btn-main:hover {
+    background: #b45309;
+    transform: translateY(-2px);
 }
 
-
-
-.serie-card h3{
-
-    color:#0D47A1;
-
-    font-size:25px;
-
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-
-
-.serie-card h4{
-
-    color:#2E7D32;
-
-    margin-top:20px;
-
+.btn-outline:hover {
+    border-color: #d97706;
+    color: #f59e0b;
+    transform: translateY(-2px);
 }
 
-
-
-.serie-card p,
-.serie-card li{
-
-    color:#555;
-
-    line-height:1.6;
-
-}
-
-
-
-.serie-card ul{
-
-    padding-left:20px;
-
-}
-
-
-
-
-@media(max-width:1000px){
-
-    .series-container{
-
-        grid-template-columns:1fr;
-
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 960px) {
+    .inscription-grid {
+        grid-template-columns: 1fr;
     }
 
+    .inscription-img-frame,
+    .inscription-card {
+        height: auto; /* Laisse s'adapter naturellement sur mobile */
+        min-height: unset;
+    }
+
+    .inscription-title {
+        font-size: 2.2rem;
+    }
+
+    .inscription-buttons {
+        flex-direction: column;
+    }
 }

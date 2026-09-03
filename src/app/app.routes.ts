@@ -11,6 +11,7 @@ import { Inscription } from './Les Headers/inscription/inscription';
 import { Bienvenue } from './Administrateur/bienvenue/bienvenue';
 import { GestionActualite } from './Administrateur/gestion-actualite/gestion-actualite';
 import { GestionContact } from './Administrateur/gestion-contact/gestion-contact';
+import { authGuard } from './Guards/auth-guard';
 
 export const routes: Routes = [
    {
@@ -53,6 +54,7 @@ export const routes: Routes = [
             {
                 path:'dashbord',
                 component:Dashbord,
+                canActivate:[authGuard],
                 children:[
                   {
                     path:'',

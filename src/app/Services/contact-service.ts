@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ContactService {
   constructor(private http:HttpClient){}
   
-  url='http://localhost:8080/Ecole/Contact'
+  url='http://localhost:8081/Ecole/Contact'
   save(contact:ContactEntity):Observable<ContactEntity>{
     return this.http.post<ContactEntity>(this.url+'/save',contact);
   }

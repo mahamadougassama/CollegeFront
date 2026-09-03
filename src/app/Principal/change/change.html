@@ -4,7 +4,7 @@
     <div class="hero-content">
 
         <h1>
-            Bienvenue au Collège Royale Bamako
+            Bienvenue au Collège Royal 
         </h1>
 
         <p>
@@ -27,606 +27,409 @@
     </div>
 
 </section>
-<section class="directeur">
+<section class="director-section">
+    <div class="director-container">
+        
+        <!-- Colonne de gauche : Photo & Badge -->
+        <div class="director-visual">
+            <div class="image-box">
+                <!-- Remplacez l'image par la photo du directeur -->
+                <img src="Images/DG3.png" alt="Directeur de l'entreprise">
+                <div class="experience-badge">
+                    <span class="number">15+</span>
+                    <span class="text">Ans d'expérience</span>
+                </div>
+            </div>
+        </div>
 
-    <div class="directeur-image">
-        <img src="Images/DG.jpeg" alt="Directeur">
+        <!-- Colonne de droite : Contenu & Message -->
+        <div class="director-content">
+            <div class="section-tag">Le mot du Directeur General</div>
+            <h2 class="section-title">Bâtir l'avenir avec passion et innovation</h2>
+            
+            <blockquote class="director-quote">
+                "Notre engagement a toujours été de placer l'humain et l'excellence au cœur de notre développement. Chaque projet est une nouvelle opportunité de repousser nos limites et de créer de la valeur durable pour nos partenaires et clients."
+            </blockquote>
+
+            <div class="director-details">
+                <div class="director-info">
+                    <h4> IBRAHIM DABO</h4>
+                    <p>Directeur Général & Fondateur</p>
+                </div>
+                <!-- Optionnel : Signature -->
+                <div class="director-signature">
+                    <!-- <img src="chemin-vers-signature.png" alt="Signature"> -->
+                    <span class="fake-signature">Mr.I. Dabo</span>
+                </div>
+            </div>
+        </div>
+
     </div>
-
-
-    <div class="directeur-message">
-
-        <h2>
-            Mot du Directeur
-        </h2>
-
-        <p>
-            Chers parents, chers élèves,
-        </p>
-
-        <p>
-            Bienvenue au Collège Royale Bamako.
-            Notre établissement s'engage à offrir
-            une formation de qualité et un environnement
-            favorable à la réussite de chaque élève.
-        </p>
-
-        <p>
-            Ensemble, construisons un avenir meilleur.
-        </p>
-
-
-        <h4>
-            Le Directeur
-        </h4>
-
-    </div>
-
 </section>
-<section class="actualite">
+<section class="featured-news-section">
+    <div class="featured-container">
+        
+        <!-- En-tête discret de la section actualité accueil -->
+        <div class="featured-section-header">
+            <span class="section-badge">Actualité Récente</span>
+            <h2>À la Une du Collège Royal</h2>
+        </div>
 
-  <div class="section-header">
-    <span>À LA UNE</span>
-    <h1>Dernière actualité</h1>
-    <p>Découvrez les dernières nouvelles du Collège Royal</p>
-  </div>
+        <!-- Carte Unique "À la Une" -->
+        <div class="featured-news-card" *ngIf="derniereActualite">
+            
+            <!-- Côté Image -->
+            <div class="featured-img-wrap">
+                <!-- Remplacez le src par l'image de la dernière actualité -->
+                <img [src]="'http://loclahost:8080/images/'+derniereActualite.image" alt="Actualité à la une - Collège Royal">
+                <div class="live-badge">🔥 Dernière Actualité</div>
+            </div>
 
-  <div
-    class="actualite-card"
-    *ngIf="derniereActualite"
-  >
+            <!-- Côté Texte et Actions -->
+            <div class="featured-content">
+                
+                
+                <h3>{{derniereActualite.titre}}</h3>
+                
+                <p>{{derniereActualite.contenue}}</p>
+                
+                <div class="featured-actions">
+                    <!-- Redirige vers la page complète des actualités -->
+                    <a routerLink="/ressource" class="btn-main">Lire l'article complet →</a>
+                    <a routerLink="/ressource" class="btn-text">Toutes les actualités</a>
+                </div>
+            </div>
 
-    <!-- Image -->
-    <div class="actualite-image">
-
-      <img
-        [src]="'http://localhost:8080/images/' + derniereActualite.image"
-        alt="Image de l'actualité"
-      >
-
-      <div class="badge">
-        Actualité
-      </div>
-
+        </div>
     </div>
-
-    <!-- Contenu -->
-    <div class="actualite-content">
-
-      <span class="date">
-        Dernière publication
-      </span>
-
-      <h2>
-        {{ derniereActualite.titre }}
-      </h2>
-
-      <p>
-        {{ derniereActualite.contenue }}
-      </p>
-
-      <button routerLink="/ressource">
-        Lire la suite
-        <span>→</span>
-      </button>
-
-    </div>
-
-  </div>
-
 </section>
-<section class="mission">
-
-
-    <div class="mission-header">
-
-        <h2>
-            Notre Mission
-        </h2>
-
-        <p>
-            Offrir une éducation d'excellence pour accompagner
-            chaque élève vers la réussite.
-        </p>
-
-    </div>
-
-
-
-    <div class="mission-container">
-
-
-        <div class="mission-item">
-
-
-            <div class="mission-icon">
-                🎓
-            </div>
-
-
-            <h3>
-                Former les talents
-            </h3>
-
-
-            <p>
-                Développer les compétences et les connaissances
-                nécessaires à la réussite des élèves.
-            </p>
-
-
-        </div>
-
-
-
-
-
-        <div class="mission-item">
-
-
-            <div class="mission-icon">
-                📚
-            </div>
-
-
-            <h3>
-                Excellence académique
-            </h3>
-
-
-            <p>
-                Garantir un enseignement de qualité adapté
-                aux exigences scolaires.
-            </p>
-
-
-        </div>
-
-
-
-
-
-
-        <div class="mission-item">
-
-
-            <div class="mission-icon">
-                🌱
-            </div>
-
-
-            <h3>
-                Valeurs humaines
-            </h3>
-
-
-            <p>
-                Cultiver le respect, la discipline et
-                la responsabilité.
-            </p>
-
-
-        </div>
-
-
-
-
-
-
-        <div class="mission-item">
-
-
-            <div class="mission-icon">
-                🚀
-            </div>
-
-
-            <h3>
-                Préparer l'avenir
-            </h3>
-
-
-            <p>
-                Accompagner les élèves vers leur avenir
-                professionnel.
-            </p>
-
-
-        </div>
-
-
-
-    </div>
-
 
 
 </section>
-<section class="chiffres">
+<section class="about-section" id="apropos">
+    <div class="about-container">
+        
+        <!-- En-tête -->
+        <div class="about-intro">
+            <span class="about-badge">À propos du Collège Royal</span>
+            <h2 class="about-title">L'Excellence au Cœur de Bamako</h2>
+            <p class="about-location">📍 Situé au quartier Mali, en plein cœur de Bamako.</p>
+            <p class="about-lead">Le Collège Royal est un prestigieux complexe scolaire d’excellence.</p>
+        </div>
 
-    <div class="titre-section">
+        <!-- 1ère LIGNE : Image à gauche & Vision à droite -->
+        <div class="about-hero-grid">
+            <div class="about-image-side">
+                <div class="about-img-frame">
+                    <!-- Remplacez le src par le lien de votre image -->
+                    <img src="Images/vision.jpeg" alt="Collège Royal - The 21st Century School">
+                    <div class="about-img-badge">
+                        <span class="number">21e</span>
+                        <span class="text">Siècle</span>
+                    </div>
+                </div>
+            </div>
 
-        <h2>
-            Nos chiffres clés
-        </h2>
+            <div class="about-right-side">
+                <div class="about-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Notre Vision</h3>
+                    <p>Au collège Royal, notre vision c’est d’être une école du 21e siècle (21st century school) où la réussite est la condition sine qua non à l'entrée et l’excellence celle à la sortie.</p>
+                </div>
+            </div>
+        </div>
 
-        <p>
-            Quelques données qui représentent notre établissement.
-        </p>
+        <!-- 2ème LIGNE : Mission, Devise et Valeurs côte à côte en bas -->
+        <div class="about-bottom-grid">
+            
+            <!-- Carte Mission -->
+            <div class="about-card bottom-card">
+                <div class="card-icon">🚀</div>
+                <h3>Notre Mission</h3>
+                <ul class="mission-list">
+                    <li><span class="highlight">100%</span> Réussite</li>
+                    <li><span class="highlight">100%</span> Mention pour tous les élèves</li>
+                    <li><span class="highlight">100%</span> Accomplissement</li>
+                </ul>
+            </div>
+
+            <!-- Carte Devise -->
+            <div class="about-card bottom-card">
+                <div class="card-icon">💡</div>
+                <h3>Notre Devise</h3>
+                <p>Au-delà de la devise classique, notre parcours s'articule autour de piliers fondamentaux :</p>
+                <div class="devise-text">
+                    <strong style="color: #00b050;">Savoir…</strong> <br>Accumulation intégrale de la connaissance.<br>
+                    <strong style="color: #FFC000;">Savoir-faire…</strong><br> Maîtrise pratique.<br>
+                    <strong style="color: #C00000;">Savoir-être…</strong> <br>Valeurs morales et comportement.
+                </div>
+            </div>
+
+            <!-- Carte Valeurs -->
+            <div class="about-card bottom-card">
+                <div class="card-icon">⭐</div>
+                <h3>Nos Valeurs</h3>
+                <p>Par-dessus tout, nos valeurs se résument ainsi :</p>
+                <ul class="values-list">
+                    <li>✨ <strong>Faire Plus</strong></li>
+                    <li>✨ <strong>Faire Mieux</strong></li>
+                    <li>✨ <strong>Faire Autrement</strong></li>
+                </ul>
+            </div>
+
+        </div>
 
     </div>
-
-
-    <div class="chiffres-container">
-
-
-        <div class="chiffre-item">
-
-            <span class="icone">🎓</span>
-
-            <h3 class="counter" data-target="1000">
-                1000+
-            </h3>
-
-            <p>
-                Élèves
-            </p>
-
-        </div>
-
-
-
-        <div class="chiffre-item">
-
-            <span class="icone">👨‍🏫</span>
-
-            <h3 class="counter" data-target="50">
-                50+
-            </h3>
-
-            <p>
-                Enseignants
-            </p>
-
-        </div>
-
-
-
-        <div class="chiffre-item">
-
-            <span class="icone">🏫</span>
-
-            <h3 class="counter" data-target="20">
-                20+
-            </h3>
-
-            <p>
-                Classes
-            </p>
-
-        </div>
-
-
-
-        <div class="chiffre-item">
-
-            <span class="icone">🏆</span>
-
-            <h3 class="counter" data-target="95">
-                98
-            </h3>
-
-            <p>
-                Réussite %
-            </p>
-
-        </div>
-
-
-    </div>
-
 </section>
-<section class="about" id="nous">
-
-    <div class="section-title">
-
-        <h2>Qui sommes-nous ?</h2>
-
-        <p>
-            Le Collège Royal est un établissement engagé dans
-            l'excellence académique et l'épanouissement de ses élèves.
-        </p>
-
-    </div>
-
-
-    <div class="about-content">
-
-        <div class="about-image">
-
-            <img src="Images/iconeEducation.png" alt="Collège Royal">
-
+<section class="medals-section">
+    <div class="medals-container">
+        
+        <!-- En-tête de section -->
+        <div class="medals-header">
+            <span class="medals-tag">NOS MEDAILS</span>
+            <h2 class="medals-title">L'Excellence Couronnée</h2>
+            <p class="medals-desc">Le fruit de notre travail rigoureux et de notre engagement constant pour offrir la meilleure formation à nos étudiants.</p>
         </div>
 
-        <div class="about-text">
+        <!-- Grille des médailles -->
+        <div class="medals-grid">
+            
+            <!-- Carte 1 -->
+            <div class="medal-card">
+                <div class="medal-img-wrapper">
+                    <img src="Images/quatieme.jpeg" alt="Médaille d'Or de l'Excellence Pédagogique">
+                   
+                </div>
+                <div class="medal-body">
+                    <h3>4ème Nationnalle du Baccalauréat Malien en 2021</h3>
+                    <p>1 ère du Concours de la FrancoPhonie</p>
+                </div>
+            </div>
 
-            <h3>Notre Histoire</h3>
+            <!-- Carte 2 (Mise en avant / Featured) -->
+            <div class="medal-card featured">
+                <div class="medal-img-wrapper">
+                    <img src="Images/francophonie.jpeg" alt="Grand Trophée National du Mérite">
+                   
+                </div>
+                <div class="medal-body">
+                    <h3>Grand Trophée National du Mérite</h3>
+                    <p>Une distinction prestigieuse qui récompense notre contribution majeure au développement de l'éducation et l'encadrement de qualité.</p>
+                </div>
+            </div>
 
-            <p>
-                Depuis sa création, le Collège Royal accompagne les élèves
-                vers la réussite grâce à une pédagogie moderne,
-                un encadrement de qualité et un environnement propice
-                à l'apprentissage.
-            </p>
-
-            <div class="about-list">
-
-                <div>✔ Excellence académique</div>
-
-                <div>✔ Discipline</div>
-
-                <div>✔ Innovation pédagogique</div>
-
-                <div>✔ Ouverture sur le monde</div>
-
+            <!-- Carte 3 -->
+            <div class="medal-card">
+                <div class="medal-img-wrapper">
+                    <img src="Images/petit.jpg" alt="Prix de l'Innovation Numérique">
+                    
+                </div>
+                <div class="medal-body">
+                    <h3>Prix de l'Innovation Numérique</h3>
+                    <p>Reconnaissant notre capacité à intégrer les technologies de pointe au cœur de notre parcours de formation pour les étudiants.</p>
+                </div>
             </div>
 
         </div>
 
     </div>
-
-
-
-    <div class="vision">
-
-        <h3>Notre Vision</h3>
-
-        <p>
-
-            Former des citoyens responsables,
-            compétents et capables de relever les défis de demain.
-
-        </p>
-
-    </div>
-
-
-
-
-    <div class="valeurs">
-
-        <div class="value">
-
-            ⭐
-
-            <h4>Excellence</h4>
-
-        </div>
-
-        <div class="value">
-
-            🤝
-
-            <h4>Respect</h4>
-
-        </div>
-
-        <div class="value">
-
-            📚
-
-            <h4>Discipline</h4>
-
-        </div>
-
-        <div class="value">
-
-            💡
-
-            <h4>Innovation</h4>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="ambitions">
-
-        <h3>Nos ambitions</h3>
-
-        <div class="objectif">
-
-            🎯 Former les futurs leaders
-
-        </div>
-
-        <div class="objectif">
-
-            🌍 Développer l'ouverture internationale
-
-        </div>
-
-        <div class="objectif">
-
-            💻 Encourager le numérique
-
-        </div>
-
-        <div class="objectif">
-
-            🏆 Atteindre l'excellence
-
-        </div>
-
-    </div>
-
 </section>
-<section class="apropos">
 
+<section class="clubs-section">
+    <div class="clubs-container">
+        
+        <!-- En-tête de section -->
+        <div class="clubs-header">
+            <span class="clubs-tag">Vie Étudiante & Passion</span>
+            <h2 class="clubs-title">Explorez Nos Clubs Actifs</h2>
+            <p class="clubs-desc">Au-delà des salles de classe, exprimez vos talents, développez de nouvelles compétences et rejoignez une communauté qui vous ressemble.</p>
+        </div>
 
-    <!-- Titre général -->
-
-    <div class="titre-section">
-
-        <h2>
-            À propos du Collège Royal
-        </h2>
-
-        <p>
-            Découvrez notre établissement, nos infrastructures,
-            nos atouts et nos différents cycles de formation.
-        </p>
-
-    </div>
-
-
-
-    <!-- INFRASTRUCTURES -->
-
-    <div class="apropos-partie">
-
-        <h2>
-            🏫 Nos infrastructures
-        </h2>
-
-
-        <div class="infrastructure-container">
-
-
-            <div class="info-card">
-
-                <img src="Images/iconeClasse.jpg" alt="Salle de classe">
-
-                <h3>
-                    Salles modernes
-                </h3>
-
-                <p>
-                    Des salles de classe adaptées offrant
-                    un environnement favorable à l'apprentissage.
-                </p>
-
+        <!-- Grille asymétrique style Bento -->
+        <div class="clubs-bento-grid">
+            
+            <!-- Club 1 : Grand bloc (Mis en avant) -->
+            <div class="club-card club-large">
+                <img src="Images/avecLeBlanc.jpg" alt="Club Robotique & Innovation">
+                <div class="club-overlay">
+                    <div class="club-badge">Technologie</div>
+                    <h3>Club Robotique & Innovation</h3>
+                    <p>Concevez, programmez et pilotez des robots autonomes pour des compétitions nationales.</p>
+                </div>
             </div>
 
-
-
-            <div class="info-card">
-
-                <img src="Images/iconeBibliotheque.jpg" alt="Bibliothèque">
-
-                <h3>
-                    Bibliothèque
-                </h3>
-
-                <p>
-                    Un espace dédié à la recherche,
-                    la lecture et l'enrichissement des connaissances.
-                </p>
-
+            <!-- Club 2 : Bloc standard -->
+            <div class="club-card">
+                <img src="Images/cafe.jpg" alt="Club de Débat & Éloquence">
+                <div class="club-overlay">
+                    <div class="club-badge">Expression</div>
+                    <h3>Café Litteraire</h3>
+                    <p>Maîtrisez l'art oratoire et affûtez votre esprit critique à travers des joutes verbales stimulantes.</p>
+                </div>
             </div>
 
-
-
-            <div class="info-card">
-
-                <img src="Images/iconeInformatique.jpg" alt="Laboratoire">
-
-                <h3>
-                    Informatique
-                </h3>
-
-                <p>
-                    Des équipements permettant aux élèves
-                    de développer leurs connaissances pratiques.
-                </p>
-
+            <!-- Club 3 : Bloc standard -->
+            <div class="club-card">
+                <img src="Images/sciences.jpg" alt="Club Arts & Culture">
+                <div class="club-overlay">
+                    <div class="club-badge">Créativité</div>
+                    <h3>Café Scientifique</h3>
+                    <p>Peinture, théâtre, musique : un espace d'expression libre pour révéler l'artiste en vous.</p>
+                </div>
             </div>
 
+            <!-- Club 4 : Grand bloc horizontal -->
+            <div class="club-card club-wide">
+                <img src="Images/baby.jpg" alt="Association Sportive">
+                <div class="club-overlay">
+                    <div class="club-badge">Sport & Bien-être</div>
+                    <h3>Association Sportive & Compétitions</h3>
+                    <p>Football, basketball, athlétisme : cultivez l'esprit d'équipe et dépassez vos limites physiques dans nos tournois inter-établissements.</p>
+                </div>
+            </div>
 
         </div>
 
     </div>
-
-
-
-
-
-    <!-- ATOUTS -->
-
-    <div class="apropos-partie atouts">
-
-        <h2>
-            ⭐ Les atouts du Collège Royal
-        </h2>
-
-
-
-        <div class="atouts-container">
-
-
-            <div class="atout-card">
-
-                <span>
-                    👨‍🏫
-                </span>
-
-                <h3>
-                    Enseignants qualifiés
-                </h3>
-
-                <p>
-                    Une équipe pédagogique compétente
-                    et engagée pour accompagner les élèves.
-                </p>
-
-            </div>
-
-
-
-            <div class="atout-card">
-
-                <span>
-                    🎯
-                </span>
-
-                <h3>
-                    Suivi personnalisé
-                </h3>
-
-                <p>
-                    Un accompagnement adapté aux besoins
-                    de chaque élève.
-                </p>
-
-            </div>
-
-
-
-            <div class="atout-card">
-
-                <span>
-                    🏆
-                </span>
-
-                <h3>
-                    Excellence
-                </h3>
-
-                <p>
-                    Une formation basée sur la réussite,
-                    la discipline et la responsabilité.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-
 </section>
+<section class="activities-section">
+    <div class="activities-container">
+        
+        <!-- En-tête de section -->
+        <div class="activities-header">
+            <span class="activities-tag">Dynamisme & Expérience</span>
+            <h2 class="activities-title">Plongez au Cœur de Nos Activités</h2>
+            <p class="activities-desc">Un aperçu vivant de notre quotidien à travers des ateliers pratiques, des séminaires et des moments de partage inoubliables.</p>
+        </div>
+
+        <!-- Conteneur des cartes interactives (Effet Accordéon horizontal) -->
+        <div class="activities-accordion">
+            
+            <!-- Activité 1 -->
+            <div class="activity-panel active" style="background-image: url('Images/sportFille.jpg');">
+                <div class="activity-overlay"></div>
+                <div class="activity-content">
+                    <span class="activity-number">01</span>
+                    <div class="activity-text">
+                        <h3>Education  Sportive</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activité 2 -->
+            <div class="activity-panel" style="background-image: url('Images/sortie.jpg');">
+                <div class="activity-overlay"></div>
+                <div class="activity-content">
+                    <span class="activity-number">02</span>
+                    <div class="activity-text">
+                        <h3>Sortie Scolaire</h3>
+                        <p>Rencontres régulières avec des experts et des leaders de l'industrie pour élargir vos horizons.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activité 3 -->
+            <div class="activity-panel" style="background-image: url('Images/MaliTourisme.jpg');">
+                <div class="activity-overlay"></div>
+                <div class="activity-content">
+                    <span class="activity-number">03</span>
+                    <div class="activity-text">
+                        <h3>Sorties Pédagogiques & Stages</h3>
+                        <p>Immersion sur le terrain, visites d'entreprises et mise en situation réelle professionnelle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activité 4 -->
+            <div class="activity-panel" style="background-image: url('Images/basket.jpg');">
+                <div class="activity-overlay"></div>
+                <div class="activity-content">
+                    <span class="activity-number">04</span>
+                    <div class="activity-text">
+                        <h3>Événements & Compétitions</h3>
+                        <p>Hackathons, tournois sportifs et festivals culturels pour stimuler l'esprit d'équipe.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section class="infrastructures-zigzag">
+    <div class="zigzag-container">
+        
+        <!-- En-tête de section -->
+        <div class="zigzag-header">
+            <span class="zigzag-tag">Environnement d'Apprentissage</span>
+            <h2 class="zigzag-title">Nos Infrastructures de Pointe</h2>
+            <p class="zigzag-desc">Des espaces modernes et connectés, pensés pour offrir aux étudiants un cadre d'étude idéal et stimulant.</p>
+        </div>
+
+        <!-- Bloc 1 : Salle Informatique (Image à gauche, Texte à droite) -->
+        <div class="zigzag-row">
+            <div class="zigzag-img-box">
+                <img src="Images/Informa.jpg" alt="Salle Informatique">
+                <span class="zigzag-number">01</span>
+            </div>
+            <div class="zigzag-text-box">
+                <span class="zigzag-category">Technologie & Innovation</span>
+                <h3>Salle Informatique</h3>
+                <p>Dotée de postes de travail ultra-performants et d'une connexion haut débit permanente, notre salle informatique offre un accès illimité aux outils numériques et logiciels professionnels pour tous les étudiants.</p>
+            </div>
+        </div>
+
+        <!-- Bloc 2 : Bibliothèque (Texte à gauche, Image à droite - Inversé) -->
+        <div class="zigzag-row reverse">
+            <div class="zigzag-img-box">
+                <img src="Images/bibliotheque.jpeg" alt="Bibliothèque">
+                <span class="zigzag-number">02</span>
+            </div>
+            <div class="zigzag-text-box">
+                <span class="zigzag-category">Savoir & Documentation</span>
+                <h3>Bibliothèque</h3>
+                <p>Un espace calme, baigné de lumière naturelle et propice à la concentration. Elle abrite un vaste catalogue d'ouvrages spécialisés, de revues scientifiques et des zones de travail en groupe.</p>
+            </div>
+        </div>
+
+        <!-- Bloc 3 : Salle Moderne (Image à gauche, Texte à droite) -->
+        <div class="zigzag-row">
+            <div class="zigzag-img-box">
+                <img src="Images/salle.jpeg" alt="Salle Moderne">
+                <span class="zigzag-number">03</span>
+            </div>
+            <div class="zigzag-text-box">
+                <span class="zigzag-category">Pédagogie Interactive</span>
+                <h3>Salle Moderne</h3>
+                <p>Aménagées avec des équipements tactiles et interactifs, nos salles de cours modernes favorisent l'interactivité, le travail collaboratif et une immersion totale dans l'apprentissage.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="atouts-section">
+    <div class="atouts-container">
+        
+        <!-- En-tête de section -->
+        <div class="atouts-header">
+            <span class="atouts-tag">Nos Valeurs & Engagements</span>
+            <h2 class="atouts-title">Pourquoi Nous Choisir ?</h2>
+            <p class="atouts-desc">Découvrez en un coup d'œil ce qui fait la force de notre établissement et notre dévouement au quotidien.</p>
+        </div>
+
+        <!-- Conteneur de l'image unique mise en valeur -->
+        <div class="atouts-display-box">
+            <div class="atouts-image-wrapper">
+                <!-- Mettez ici votre image qui contient les écrits -->
+                <img src="Images/atout.jpeg" alt="Nos atouts et engagements">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
 <section class="cycles">
 
     <div class="section-title">
@@ -646,7 +449,7 @@
 
         <div class="cycle-image">
 
-            <img src="Images/iconeAcademie.png" alt="Jardin d'enfant">
+            <img src="Images/jadrin.jpeg" alt="Jardin d'enfant">
 
         </div>
 
@@ -682,7 +485,7 @@
 
         <div class="cycle-image">
 
-            <img src="Images/iconeClasse.jpg" alt="Premier cycle">
+            <img src="Images/premierCycle.jpeg" alt="Premier cycle">
 
         </div>
 
@@ -718,7 +521,7 @@
 
         <div class="cycle-image">
 
-            <img src="assets/images/second-cycle.jpg" alt="Second cycle">
+            <img src="Images/secondCycle.jpeg" alt="Second cycle">
 
         </div>
 
@@ -753,7 +556,7 @@
 
         <div class="cycle-image">
 
-            <img src="assets/images/lycee.jpg" alt="Lycée">
+            <img src="Images/lycee.jpeg" alt="Lycée">
 
         </div>
 
@@ -782,5 +585,4 @@
 
     </div>
 
-</section>
 </section>

@@ -255,71 +255,151 @@
 
 
 }
-.directeur {
+/* --- Style global de la section --- */
+.director-section {
+    background-color: beige; /* Fond gris très clair, tendance */
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+}
 
+.director-container {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-
     align-items: center;
-
-    justify-content: center;
-
-    gap: 50px;
-
-    padding: 70px 10%;
-
-    background-color: ivory;
-
+    gap: 60px;
 }
 
+/* --- Colonne Visuelle (Photo) --- */
+.director-visual {
+    flex: 0 0 40%;
+    position: relative;
+}
 
-.directeur-image img {
-
-    width: 300px;
-
-    height: 350px;
-
-    object-fit: cover;
-
+.image-box {
+    position: relative;
     border-radius: 20px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-
-.directeur-message {
-
-    max-width: 600px;
-
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-
-.directeur-message h2 {
-
-    color: #0D47A1;
-
-    font-size: 35px;
-
-    margin-bottom: 20px;
-
+.image-box:hover img {
+    transform: scale(1.03); /* Léger zoom élégant au survol */
 }
 
+/* Petit badge flottant sur la photo */
+.experience-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
 
-.directeur-message p {
+.experience-badge .number {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #38bdf8; /* Touche de couleur moderne (Bleu clair) */
+}
 
-    font-size: 18px;
+.experience-badge .text {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
 
+/* --- Colonne Contenu --- */
+.director-content {
+    flex: 1;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #03652f;
+}
+
+.director-quote {
+    font-size: 1.05rem;
     line-height: 1.7;
-
+    color: #475569;
+    font-style: italic;
+    margin-bottom: 30px;
+    position: relative;
+    border-left: 4px solid #2563eb;
+    padding-left: 20px;
 }
 
+/* --- Infos et Signature --- */
+.director-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+}
 
-.directeur-message h4 {
+.director-info h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+}
 
-    margin-top: 25px;
+.director-info p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0;
+}
 
-    color: #FFC107;
+/* Style de secours si pas d'image de signature */
+.fake-signature {
+    font-family: 'Brush Script MT', cursive, sans-serif;
+    font-size: 1.8rem;
+    color: #2563eb;
+}
 
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+    .director-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .director-visual {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
 }
 /* Responsive Mot du Directeur */
 
@@ -418,7 +498,7 @@
 
 .section-header h1 {
   margin: 10px 0;
-  color: #123b2a;
+  color: #03652f;
   font-size: 38px;
   font-weight: 700;
 }
@@ -464,14 +544,14 @@
 .actualite-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .actualite-card:hover .actualite-image img {
-  transform: scale(1.08);
+  transform: scale(1.05);
+  filter: brightness(0.9);
 }
 
 /* Badge */
@@ -982,222 +1062,375 @@
   }
 
 }
-/*mission*/
-.mission{
-
-
-    padding:90px 8%;
-
-
-    background:ivory;
-
-
+/* --- Style Global de la Section À Propos --- */
+.about-section {
+    background-color: beige;
+    color: #f8fafc;
+    padding: 100px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
-.mission-header{
-
-
-    text-align:center;
-
-
-    margin-bottom:70px;
-
-
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-
-
-.mission-header h2{
-
-
-    font-size:45px;
-
-
-    color:green;
-
-
-    margin-bottom:15px;
-
-
+/* --- En-tête --- */
+.about-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px auto;
 }
 
-
-
-.mission-header p{
-
-
-    font-size:20px;
-
-
-    color:#555;
-
-
-    max-width:750px;
-
-
-    margin:auto;
-
-
-    line-height:1.7;
-
-
+.about-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
-
-
-
-
-.mission-container{
-
-
-    display:grid;
-
-
-    grid-template-columns:repeat(4,1fr);
-
-
-    gap:30px;
-
-
+.about-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 10px;
 }
 
-
-
-
-
-
-.mission-item{
-
-
-    background:white;
-
-
-    text-align:center;
-
-
-    padding:40px 25px;
-
-
-    border-radius:25px;
-
-
-    position:relative;
-
-
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
-
-
-    transition:.4s;
-
-
+.about-location {
+    font-size: 1.05rem;
+    color: #475569;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-
-
-
-.mission-item:hover{
-
-
-    transform:translateY(-15px);
-
-
+.about-lead {
+    font-size: 1.1rem;
+    color: #334155;
+    line-height: 1.6;
 }
 
-
-
-
-
-
-.mission-icon{
-
-
-    width:80px;
-
-
-    height:80px;
-
-
-    margin:auto;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    border-radius:50%;
-
-
-    background:#0D47A1;
-
-
-    color:white;
-
-
-    font-size:40px;
-
-
-    margin-bottom:25px;
-
-
+/* --- 1ère LIGNE : Image à gauche (entière et taille normale), Vision à droite --- */
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: center;
 }
 
-
-
-
-
-
-.mission-item h3{
-
-
-    color:#0D47A1;
-
-
-    font-size:22px;
-
-
-    margin-bottom:15px;
-
-
+.about-image-side {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-
-
-.mission-item p{
-
-
-    color:#666;
-
-
-    line-height:1.7;
-
-
+.about-img-frame {
+    position: relative;
+    width: 100%;
+    max-height: 450px; /* Hauteur maximale pour éviter qu'elle ne devienne trop grande */
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.05); /* Fond subtil si l'image a des marges */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.about-img-frame img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain; /* MODIFIÉ : Assure que toute l'image s'affiche sans être rognée */
+    display: block;
+}
 
+/* Badge flottant sur l'image */
+.about-img-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 20px;
+    border-radius: 16px;
+}
 
+.about-img-badge .number {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #f59e0b;
+}
 
+.about-img-badge .text {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-@media(max-width:1000px){
+.about-right-side {
+    display: flex;
+    flex-direction: column;
+}
 
+/* --- Design des Cartes Globales --- */
+.about-card {
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    height: 100%;
+    box-sizing: border-box;
+}
 
-    .mission-container{
+.about-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 158, 11, 0.4);
+}
 
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
 
-        grid-template-columns:repeat(2,1fr);
+.about-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
 
+.about-card p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
 
+/* --- 2ème LIGNE : Mission, Devise, Valeurs en bas côte à côte (Vertical) --- */
+.about-bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.bottom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.mission-list, .values-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mission-list li, .values-list li {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.mission-list .highlight {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #f59e0b;
+}
+
+.devise-text {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+.devise-text strong {
+    color: #f59e0b;
+}
+
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 960px) {
+    .about-hero-grid,
+    .about-bottom-grid {
+        grid-template-columns: 1fr;
     }
 
+    .about-title {
+        font-size: 2.1rem;
+    }
+}
+/* --- Styles Globaux de la Section --- */
+.medals-section {
+    background: linear-gradient(180deg, beige);
+    padding: 100px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+}
 
+.medals-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* --- En-tête --- */
+.medals-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px auto;
+}
+
+.medals-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.medals-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.medals-desc {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- Grille --- */
+.medals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* --- Cartes --- */
+.medal-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.medal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
+}
+
+.medal-card.featured {
+    border: 2px solid #2563eb;
+    box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.15);
+}
+
+/* --- Conteneur des images (AGRANDI) --- */
+.medal-img-wrapper {
+    position: relative;
+    height: 340px; /* Hauteur augmentée pour une très grande place à l'image */
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.medal-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* S'assure que l'image remplit tout l'espace sans se déformer */
+    transition: transform 0.6s ease;
+}
+
+.medal-card:hover .medal-img-wrapper img {
+    transform: scale(1.06);
+}
+
+/* Badge de l'année sur l'image */
+.medal-year-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.medal-year-badge.highlight {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* --- Corps du texte --- */
+.medal-body {
+    padding: 25px 30px 30px 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.medal-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.medal-body p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 960px) {
+    .medals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .medals-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .medal-img-wrapper {
+        height: 280px; /* Un peu plus compact sur mobile pour garder du confort de lecture */
+    }
+
+    .medals-title {
+        font-size: 2rem;
+    }
 }
 
 
@@ -1215,120 +1448,171 @@
 
 
 }
-/*CHiffre*/
-.chiffres {
-
-    padding:35px 5%;
-
-    background:#2E7D32;
-
-    color:white;
-
-    text-align:center;
-
+/* --- Style Global de la Section --- */
+.clubs-section {
+    background-color:beige; /* Fond sombre et immersif pour trancher avec les sections précédentes */
+    padding: 100px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
 }
 
-
-/* Titre */
-
-.titre-section h2 {
-
-    font-size:28px;
-
-    margin-bottom:8px;
-
+.clubs-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-
-.titre-section p {
-
-    font-size:15px;
-
-    margin-bottom:25px;
-
+/* --- En-tête --- */
+.clubs-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px auto;
 }
 
-
-
-
-/* Conteneur */
-
-.chiffres-container {
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:20px;
-
-    flex-wrap:nowrap;
-
+.clubs-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #38bdf8; /* Bleu clair lumineux */
+    margin-bottom: 12px;
 }
 
-
-
-/* Cartes */
-
-.chiffre-item {
-
-    width:140px;
-
-    padding:15px;
-
-    background:white;
-
-    color:#2E7D32;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-
-    transition:.3s;
-
+.clubs-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
 }
 
-
-
-.chiffre-item:hover {
-
-    transform:translateY(-5px);
-
+.clubs-desc {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.6;
 }
 
-
-
-/* Icônes */
-
-.icone {
-
-    font-size:28px;
-
+/* --- Grille Bento Asymétrique --- */
+.clubs-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
 }
 
-
-
-/* Chiffres */
-
-.chiffre-item h3 {
-
-    font-size:25px;
-
-    margin:8px 0;
-
+/* --- Style de base des Cartes --- */
+.club-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #1e293b;
+    min-height: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
+.club-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s ease;
+}
 
+/* Effet de zoom sur l'image au survol */
+.club-card:hover img {
+    transform: scale(1.08);
+}
 
-/* Texte */
+.club-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+}
 
-.chiffre-item p {
+/* --- Disposition des blocs (Bento Layout) --- */
+/* Club 1 : Occupe 7 colonnes sur 12 */
+.club-card.club-large {
+    grid-column: span 7;
+    min-height: 400px;
+}
 
-    font-size:14px;
+/* Club 2 & 3 : Occupent chacun 5 colonnes sur 12 */
+.club-card:not(.club-large):not(.club-wide) {
+    grid-column: span 5;
+}
 
-    margin:0;
+/* Club 4 : Occupe toute la largeur (12 colonnes) */
+.club-card.club-wide {
+    grid-column: span 12;
+    min-height: 350px;
+}
 
+/* --- Calque de superposition (Gradient + Texte) --- */
+.club-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 30%, rgba(15, 23, 42, 0.9) 85%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 35px;
+    z-index: 2;
+}
+
+/* Badge de catégorie flottant sur la carte */
+.club-badge {
+    align-self: flex-start;
+    background: rgba(56, 189, 248, 0.2);
+    backdrop-filter: blur(8px);
+    color: #38bdf8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.club-overlay h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.club-card.club-large .club-overlay h3 {
+    font-size: 1.8rem;
+}
+
+.club-overlay p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 90%;
+}
+
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 900px) {
+    .clubs-bento-grid {
+        grid-template-columns: 1fr; /* Passage en une seule colonne sur mobile */
+    }
+
+    .club-card.club-large,
+    .club-card:not(.club-large):not(.club-wide),
+    .club-card.club-wide {
+        grid-column: span 1;
+        min-height: 300px;
+    }
+
+    .clubs-title {
+        font-size: 2rem;
+    }
 }
 
 
@@ -1341,6 +1625,163 @@
 
     }
 
+}
+/* --- Style Global de la Section --- */
+.activities-section {
+    background-color: #ffffff; /* Retour à un fond lumineux pour contraster avec les clubs */
+    padding: 100px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+}
+
+.activities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- En-tête --- */
+.activities-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px auto;
+}
+
+.activities-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4f46e5; /* Violet-bleu moderne */
+    margin-bottom: 12px;
+}
+
+.activities-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.activities-desc {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- Accordéon horizontal (Flexbox) --- */
+.activities-accordion {
+    display: flex;
+    gap: 16px;
+    height: 480px;
+    width: 100%;
+}
+
+/* --- Style de chaque panneau --- */
+.activity-panel {
+    position: relative;
+    flex: 1; /* Taille égale par défaut */
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Effet d'expansion au survol (Desktop) */
+.activity-panel:hover {
+    flex: 3; /* Ce panneau s'élargit grandement */
+    box-shadow: 0 20px 30px rgba(79, 70, 229, 0.2);
+}
+
+/* Supergraduation sombre pour rendre le texte lisible sur l'image */
+.activity-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 20%, rgba(15, 23, 42, 0.9) 90%);
+    transition: background 0.4s ease;
+}
+
+.activity-panel:hover .activity-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 10%, rgba(15, 23, 42, 0.85) 90%);
+}
+
+/* --- Contenu à l'intérieur du panneau --- */
+.activity-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+    height: 100%;
+}
+
+.activity-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: auto; /* Pousse le chiffre vers le haut */
+    transition: color 0.4s ease;
+}
+
+.activity-panel:hover .activity-number {
+    color: #818cf8; /* Couleur lumineuse au survol */
+}
+
+.activity-text h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    white-space: nowrap; /* Empêche le texte de se casser bizarrement pendant l'animation */
+}
+
+.activity-text p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Le texte descriptif apparaît uniquement quand on zoome/survole le panneau */
+.activity-panel:hover .activity-text p {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100px;
+}
+
+/* Optionnel : pour garder le texte court visible si on veut, mais l'effet accordéon cache/affiche le paragraphe */
+
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 900px) {
+    .activities-accordion {
+        flex-direction: column; /* Passage en mode vertical sur mobile */
+        height: auto;
+    }
+
+    .activity-panel {
+        height: 220px;
+        flex: none !important;
+    }
+
+    .activity-text p {
+        opacity: 1; /* Toujours visible sur mobile puisqu'il n'y a pas de survol (hover) */
+        transform: translateY(0);
+        max-height: none;
+    }
 }
 
 
@@ -1535,54 +1976,63 @@
 /* VALEURS */
 /* ---------------------- */
 
-.valeurs{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:25px;
-
-    margin-bottom:70px;
-
+/* Conteneur principal de la section */
+.valeurs-container {
+    text-align: center;
+    margin: 50px 0;
+    padding: 0 20px;
 }
 
-.value{
-
-    background:green;
-
-    text-align:center;
-
-    padding:35px;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-    transition:.3s;
-
+/* Sous-titre de la section */
+.valeurs-container .section-subtitle {
+    color: #0b3c5d;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
 
-.value:hover{
-
-    transform:translateY(-10px);
-
+/* Boîte contenant l'image */
+.valeurs-image-box {
+    width: 100%;
+    max-width: 900px; /* Largeur maximale sur grand écran */
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background: beige; /* Fond neutre si l'image laisse des espaces sur les côtés */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.value{
-
-    font-size:50px;
-
+/* Style pour afficher l'image en entier sans la couper */
+.responsive-valeurs-img {
+    width: 100%;
+    height: auto;           /* S'adapte automatiquement pour respecter les proportions d'origine */
+    max-height: 500px;      /* Empêche l'image d'être trop haute sur les grands écrans */
+    object-fit: contain;    /* GARANTI QUE TOUTE L'IMAGE EST VISIBLE */
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.value h4{
+/* Petit effet au survol */
+.valeurs-image-box:hover .responsive-valeurs-img {
+    transform: scale(1.02);
+}
 
-    margin-top:20px;
+/* -------------------------------------- */
+/* RESPONSIVE POUR LES APPAREILS MOBILES   */
+/* -------------------------------------- */
 
-    color:#0D47A1;
+@media (max-width: 768px) {
+    .valeurs-container .section-subtitle {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
 
-    font-size:22px;
-
+    .responsive-valeurs-img {
+        max-height: 300px; /* Ajuste la hauteur maximale sur les petits téléphones */
+    }
 }
 
 
@@ -1733,111 +2183,265 @@
 
 
 
-/* Infrastructure */
+/* --- Style Global de la Section --- */
+.infrastructures-zigzag {
+    background-color:beige; /* Fond blanc pur pour un rendu très propre */
+    padding: 100px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+}
 
-.infrastructure-container {
+.zigzag-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-    display:flex;
+/* --- En-tête --- */
+.zigzag-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 80px auto;
+}
 
-    justify-content:center;
+.zigzag-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #6366f1; /* Indigo moderne */
+    margin-bottom: 12px;
+}
 
-    gap:30px;
+.zigzag-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
 
-    flex-wrap:wrap;
+.zigzag-desc {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+}
 
+/* --- Lignes Zig-Zag --- */
+.zigzag-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+/* Retire la marge du dernier bloc */
+.zigzag-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Inverse l'ordre pour une ligne sur deux (Texte à gauche, Image à droite) */
+.zigzag-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- Boîte Image --- */
+.zigzag-img-box {
+    flex: 1;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 340px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.zigzag-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.zigzag-row:hover .zigzag-img-box img {
+    transform: scale(1.04); /* Léger zoom élégant au survol de la ligne */
+}
+
+/* Grand numéro d'index artistique sur l'image */
+.zigzag-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Boîte Texte --- */
+.zigzag-text-box {
+    flex: 1;
+}
+
+.zigzag-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #6366f1;
+    background: #eef2ff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.zigzag-text-box h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.zigzag-text-box p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 900px) {
+    .zigzag-row, 
+    .zigzag-row.reverse {
+        flex-direction: column; /* Sur mobile, l'image passe toujours au-dessus et le texte en dessous */
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .zigzag-img-box {
+        width: 100%;
+        height: 260px;
+    }
+
+    .zigzag-title {
+        font-size: 2rem;
+    }
+
+    .zigzag-text-box h3 {
+        font-size: 1.5rem;
+    }
 }
 
 
 
-.info-card {
 
-    width:300px;
 
-    background:ivory;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-
+/* --- Style Global de la Section --- */
+.atouts-section {
+    background-color: beige; /* Fond blanc pur pour une clarté maximale */
+    padding: 100px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
 }
-
-
-
-.info-card img {
-
-    width:100%;
-
-    height:180px;
-
-    object-fit:cover;
-
-}
-
-
-
-.info-card h3 {
-
-    color:green;
-
-}
-
-
-
-.info-card p {
-
-    padding:15px;
-
-}
-
-
-
-
-
-/* Atouts */
-
 
 .atouts-container {
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:30px;
-
+    max-width: 1000px; /* Largeur idéale pour mettre en valeur une belle image centrale */
+    margin: 0 auto;
 }
 
-
-
-.atout-card {
-
-    width:280px;
-
-    background:ivory;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-
+/* --- En-tête --- */
+.atouts-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px auto;
 }
 
-
-
-.atout-card span {
-
-    font-size:45px;
-
+.atouts-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2563eb;
+    margin-bottom: 12px;
 }
 
+.atouts-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
 
+.atouts-desc {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+}
 
-.atout-card h3 {
+/* --- Boîte de présentation de l'image --- */
+.atouts-display-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: 20px; /* Crée un effet de cadre / "passe-partout" très design */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-    color:green;
+.atouts-display-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 35px -10px rgba(37, 99, 235, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+}
 
+/* --- Wrapper de l'image --- */
+.atouts-image-wrapper {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    width: 100%;
+}
+
+.atouts-image-wrapper img {
+    width: 100%;
+    height: auto; /* S'adapte naturellement aux proportions de votre image avec du texte */
+    display: block;
+    object-fit: contain; /* Garantit qu'aucune partie du texte de l'image n'est coupée */
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+    .atouts-section {
+        padding: 60px 15px;
+    }
+
+    .atouts-title {
+        font-size: 2rem;
+    }
+
+    .atouts-display-box {
+        padding: 10px; /* Réduit l'espace du cadre sur les petits écrans */
+        border-radius: 20px;
+    }
+
+    .atouts-image-wrapper {
+        border-radius: 12px;
+    }
+}
+/* Ajustements pour les petits mobiles */
+@media (max-width: 480px) {
+  .atouts-image-wrapper {
+    padding: 6px;
+    border-radius: 12px;
+  }
 }
 /* Responsive Atouts */
 
@@ -1897,164 +2501,366 @@
 
 
 }
-.cycles{
-
-    padding:80px 8%;
-
-    background:ivory;
-
+/* --- Style Global de la Section Cycles --- */
+.cycles {
+    background: linear-gradient(135deg, beige);
+    padding: 120px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+    position: relative;
+    overflow: hidden;
 }
 
-.section-title{
-
-    text-align:center;
-
-    margin-bottom:70px;
-
+/* --- Titre de Section --- */
+.cycles .section-title {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 80px auto;
 }
 
-.section-title h2{
-
-    font-size:42px;
-
-    color:green;
-
-    margin-bottom:15px;
-
+.cycles .section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
 }
 
-.section-title p{
-
-    font-size:18px;
-
-    color:#666;
-
-    max-width:700px;
-
-    margin:auto;
-
+.cycles .section-title p {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.cycle-card{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:50px;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:35px;
-
-    margin-bottom:40px;
-
-    box-shadow:15px 20px 10px green;
-
+/* --- Cartes des Cycles (Disposition de base) ---
+   On conserve votre classe .cycle-card et .reverse 
+*/
+.cycle-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
 }
 
-.reverse{
-
-    flex-direction:row-reverse;
-
+.cycle-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
 }
 
-.cycle-image{
-
-    flex:1;
-
+/* --- Inversion pour les classes .reverse --- */
+.cycle-card.reverse {
+    flex-direction: row-reverse;
 }
 
-.cycle-image img{
-
-    width:100%;
-
-    height:320px;
-
-    object-fit:cover;
-
-    border-radius:20px;
-
+/* --- Visuel / Image du Cycle --- */
+.cycle-image {
+    flex: 1;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.06);
 }
 
-.cycle-content{
-
-    flex:1;
-
+.cycle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
 }
 
-.cycle-content h3{
-
-    color:green;
-
-    font-size:32px;
-
-    margin-bottom:20px;
-
+.cycle-card:hover .cycle-image img {
+    transform: scale(1.05); /* Effet de zoom fluide au survol de la carte */
 }
 
-.cycle-content p{
-
-    font-size:18px;
-
-    color:#555;
-
-    line-height:1.8;
-
-    margin-bottom:20px;
-
+/* --- Contenu Texte du Cycle --- */
+.cycle-content {
+    flex: 1.1;
 }
 
-.cycle-content ul{
-
-    list-style:none;
-
-    padding:0;
-
+.cycle-content h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #03652f;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
 }
 
-.cycle-content li{
-
-    margin-bottom:12px;
-
-    font-size:17px;
-
-    color:#444;
-
+.cycle-content > p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 25px;
 }
 
-.cycle-card:hover{
-
-    transform:translateY(-6px);
-
-    transition:.3s;
-
+/* --- Liste des points clés (✔) --- */
+.cycle-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Affichage en double colonne propre */
+    gap: 12px 20px;
 }
 
-@media(max-width:900px){
+.cycle-content ul li {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #334155;
+    background: #f8fafc;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #edf2f7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
 
-    .cycle-card{
+/* Personnalisation de la puce de validation */
+.cycle-content ul li:hover {
+    background: #0f172a;
+    color: #ffffff;
+}
 
-        flex-direction:column;
-
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 900px) {
+    .cycle-card, 
+    .cycle-card.reverse {
+        flex-direction: column !important; /* L'image passe au-dessus et le texte en dessous partout */
+        gap: 25px;
+        padding: 20px;
     }
 
-    .reverse{
-
-        flex-direction:column;
-
+    .cycle-image {
+        width: 100%;
+        height: 240px;
     }
 
-    .cycle-image img{
-
-        height:250px;
-
+    .cycles .section-title h2 {
+        font-size: 2.2rem;
     }
 
+    .cycle-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .cycle-content ul {
+        grid-template-columns: 1fr; /* Passage en une seule colonne sur mobile pour de l'espace */
+    }
 }
 
 
 
 
+/* --- Style Global de la Section "À la Une" (Accueil) --- */
+.featured-news-section {
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.featured-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* En-tête de section */
+.featured-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.1);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.featured-section-header h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+/* --- Carte Principale "À la Une" (Style Horizontal) --- */
+.featured-news-card {
+    background: #0f172a; /* Rappel du thème sombre élégant */
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+    display: grid;
+    grid-template-columns: 1.1fr 1.2fr; /* L'image et le texte se partagent l'espace harmonieusement */
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.featured-news-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* --- Conteneur Image --- */
+.featured-img-wrap {
+    position: relative;
+    min-height: 350px;
+    overflow: hidden;
+    background: #1e293b;
+}
+
+.featured-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.featured-news-card:hover .featured-img-wrap img {
+    transform: scale(1.04);
+}
+
+/* Badge "Dernière Actualité" flottant sur l'image */
+.live-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    color: #f59e0b;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* --- Contenu Texte --- */
+.featured-content {
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.news-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 4px 10px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.featured-content h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.35;
+}
+
+.featured-content p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.65;
+    margin-bottom: 25px;
+}
+
+/* Actions (Boutons) */
+.featured-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-main {
+    background: #d97706;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.btn-main:hover {
+    background: #b45309;
+    transform: translateY(-2px);
+}
+
+.btn-text {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-text:hover {
+    color: #ffffff;
+}
+
+/* --- Responsive Design (Mobile & Tablettes) --- */
+@media (max-width: 900px) {
+    .featured-news-card {
+        grid-template-columns: 1fr; /* Passe l'image au-dessus et le texte en dessous sur mobile */
+    }
+
+    .featured-img-wrap {
+        min-height: 240px;
+    }
+
+    .featured-content {
+        padding: 30px 20px;
+    }
+
+    .featured-section-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .featured-actions {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+}
